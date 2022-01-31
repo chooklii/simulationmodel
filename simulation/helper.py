@@ -1,4 +1,4 @@
-from monitoring.monitor import monitor_rejection, monitor_queue
+from simulation.monitoring.monitor import monitor_rejection, monitor_queue
 
 # check if max number of queued requests is reached, if so reject and monitor
 def checkQueueLength(selectedServer, env, req):

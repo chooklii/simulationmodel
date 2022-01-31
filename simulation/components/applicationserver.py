@@ -1,9 +1,9 @@
 import simpy
 import random
-from monitoring.monitor import monitorStart, monitorCompletion
+from simulation.monitoring.monitor import monitorStart, monitorCompletion
 
-from components.cpu import CPU
-from helper import checkQueueLength
+from simulation.components.cpu import CPU
+from simulation.helper import checkQueueLength
 
 #Single Instance of Application Server
 class ApplicationServer(object):
@@ -93,7 +93,7 @@ class ApplicationServer(object):
 
 
     def selectNextComponent(self, req):
-        from components.handler import allComponents
+        from simulation.components.handler import allComponents
         nextComponent = req.getNextComponentID()
         listOfNextComponents = []
 

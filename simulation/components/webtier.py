@@ -1,9 +1,9 @@
 import simpy
 import random
 
-from components.cpu import CPU
-from monitoring.monitor import monitorStart, monitorCompletion
-from helper import checkQueueLength
+from simulation.components.cpu import CPU
+from simulation.monitoring.monitor import monitorStart, monitorCompletion
+from simulation.helper import checkQueueLength
 
 
 class WebTier(object):
@@ -71,7 +71,7 @@ class WebTier(object):
             yield self.env.process(self.requestCPU(self.reuseSSLConnectionTime))
 
     def selectNextComponent(self, req):
-        from components.handler import allComponents
+        from simulation.components.handler import allComponents
         nextComponent = req.getNextComponentID()
         listOfNextComponents = []
 

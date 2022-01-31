@@ -1,8 +1,8 @@
 import simpy
 import random
-from helper import checkQueueLength
-from monitoring.monitor import monitorStart, monitorCompletion
-from components.cpu import CPU
+from simulation.helper import checkQueueLength
+from simulation.monitoring.monitor import monitorStart, monitorCompletion
+from simulation.components.cpu import CPU
 
 class LoadBalancer(object):
 
@@ -168,7 +168,7 @@ class LoadBalancer(object):
         return req.path[destinationID]
 
     def selectNextComponent(self, req):
-        from components.handler import allComponents
+        from simulation.components.handler import allComponents
         nextComponent = req.getNextComponentID()
         listOfNextComponents = []
 

@@ -1,9 +1,9 @@
 # Handle all Components
-from components.applicationserver import ApplicationServer
-from components.webtier import WebTier
-from components.database import Database
-from components.externalSystems import ExternalSystem
-from components.loadbalancer import LoadBalancer
+from simulation.components.applicationserver import ApplicationServer
+from simulation.components.webtier import WebTier
+from simulation.components.database import Database
+from simulation.components.externalSystems import ExternalSystem
+from simulation.components.loadbalancer import LoadBalancer
 
 import config
 

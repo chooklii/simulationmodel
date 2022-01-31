@@ -1,4 +1,4 @@
-from configclasses import (
+from simulation.configclasses import (
     ApplicationServerConfig,
     DatabaseServerConfig,
     WebTierConfig,

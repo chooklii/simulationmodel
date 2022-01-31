@@ -1,9 +1,8 @@
 import simpy
 import random
-from monitoring.monitor import monitorStart, monitorCompletion
-from components.disk import Disk
-
-from components.cpu import CPU
+from simulation.monitoring.monitor import monitorStart, monitorCompletion
+from simulation.components.disk import Disk
+from simulation.components.cpu import CPU
 
 #Single Instance of Database
 class Database(object):
