@@ -11,15 +11,15 @@ from simulation.configclasses import (
 
 # All numbers of requests and sessions used for simulation - each value in the list results in a new simulation
 REQUESTS_PER_SECOND = []
-UNIQUE_SESSIONS = [500, 1000, 1250, 1500, 1750, 2000]
+UNIQUE_SESSIONS = []
 # If Sessions or Requests per Second should be used
 USE_SESSIONS = True
 # The time the simulation sleeps - large values result in a faster, but more inaccurate simulation
-TIMEOUT_INTERVALL = 0.001
+TIMEOUT_INTERVALL = 0
 # The think time for sessions
-THINK_TIME = 7
+THINK_TIME = 0
 # The time (in s) the simulation is run
-SIM_TIME = 40
+SIM_TIME = 0
 # If one request results in one or multiple requests per request - It is possible that requests are used, but each request sends an average of 5 requests
 MULTIPLE_REQUESTS_PER_USER = False
 # These values define the minimum and maximum parameters for the number of requests - a random value inbetween will be selected
@@ -28,9 +28,9 @@ MAX_NUMBER_OF_REQUESTS = 1
 # If SSL is used
 SSL = False
 # SSL Timeout before a full connection is required
-SSL_TIMEOUT = 10
-FULL_SSL_CONNECTION_TIME = 0.17
-REUSE_SSL_CONNECTION_TIME = 0.02
+SSL_TIMEOUT = 0
+FULL_SSL_CONNECTION_TIME = 0
+REUSE_SSL_CONNECTION_TIME = 0
 
 # All Types of Requests
 
@@ -71,27 +71,7 @@ REQUESTS = [
 """
 
 REQUESTS = [
-    RequestConfig(
-        id=1,
-        name="Buy",
-        probability=0.5,
-        path={
-            0: [{"step-id": 1, "componentIDs": ["WT"]}],
-            1: [{"step-id": 1, "componentIDs": ["AS"]}],
-            2: [{"step-id": 1, "componentIDs": ["DB"]}],
-        },
-    ),
-    RequestConfig(
-        id=2,
-        name="Background",
-        probability=0.5,
-        path={
-            0: [{"step-id": 2, "componentIDs": ["WT"]}],
-            1: [{"step-id": 2, "componentIDs": ["AS"]}],
-            2: [{"step-id": 2, "componentIDs": ["DB"]}],
-        },
-    ),
-
+    # RequestConfig()
 ]
 
 # All Components and their informations - It is important to match the step-ids within the processing times
@@ -104,22 +84,10 @@ procesingTime={
 """
 
 WEB_TIERS = [
-    WebTierConfig(
-        serverid="WT",
-        maxuser=500,
-        processingTime={
-            1: 0.0008710,
-            2: 0.0008710
-        })
+    # WebTierConfig()
 ]
 APP_SERVER = [
-    ApplicationServerConfig(
-        serverid="AS",
-        maxuser=500,
-        processingTime={
-            1: 0.008761,
-            2: 0.004505,
-        }),
+    # ApplicationServerConfig()
 ]
 
 """
@@ -143,30 +111,7 @@ DATABASE_REPLICATION = {
 }
 
 DATABASES = [
-    DatabaseServerConfig(
-        serverid="DB",
-        processingTime={
-            1: {
-                "cpu": {
-                    "read": 0.001613,
-                    "write": 0
-                },
-                "disk": {
-                    "read": 0,
-                    "write": 0
-                }
-            },
-            2: {
-                "cpu": {
-                    "read": 0.0008294,
-                    "write": 0
-                },
-                "disk": {
-                    "read": 0,
-                    "write": 0
-                }
-            }
-        })
+    # DatabaseServerConfig()
 ]
 
 LOADBALANCER = [
@@ -189,14 +134,9 @@ RESPONSE_TIME = True
 OWN_NAME = "Model"
 # Compared Results displayed in the graph - Make sure that a value for all number of clients / requests is givens
 COMPARED_RESULTS = {
-    "(Bacigalupo et al., 2004)": {
-        500: 0.1, 
-        1000: 0.15, 
-        1250: 0.2, 
-        1500: 1.1, 
-        1750: 2.5, 
-        2000: 4.1
-    },
+    #"NAME": {
+        # Parameter (e.g. 500) : Result
+    #},
 }
 
 # X and Y Label of the Graph

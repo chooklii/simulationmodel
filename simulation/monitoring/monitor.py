@@ -185,11 +185,11 @@ def plotGraph(
     dataframe.plot(
         x="requests",ylabel=ylabel, xlabel=xlabel, xticks=xticks
     )
-    plt.savefig('simulation/simulationModel/output/output.png')
+    plt.savefig('output/output.png')
 
 
 def writeDataToFile(time, include_compared_results, comparedResults, requests):
-    with open("simulation/simulationModel/output/data.txt", "w+") as f:
+    with open("output/data.txt", "w+") as f:
         for key in datastore:
             responseTime = calculateAverageResponseTime(datastore[key])
             f.write("______")
