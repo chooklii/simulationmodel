@@ -12,3 +12,5 @@ creation of the Simulation can be found within my master thesis.
 2. Insert information regarding your e-commerce web application architecture into the `config.py` File
 
 3. Run the simulation by executing the `simulation.py` File
+
+FUll Paper: https://opus-hshn.bsz-bw.de/frontdoor/index/index/start/2/rows/10/sortfield/score/sortorder/desc/searchtype/simple/query/zenth/docId/206
